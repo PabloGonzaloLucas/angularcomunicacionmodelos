@@ -13,6 +13,7 @@ import { HijodeporteComponent } from './components/hijodeporte.component/hijodep
 import { LibreriaComponent } from './components/libreria-component.component/libreria-component.component';
 import { ComicComponent } from './components/comic-component.component/comic-component.component';
 import { ServiceComics } from './services/service.comics';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,12 +31,13 @@ import { ServiceComics } from './services/service.comics';
     BrowserModule,
     routing,
     RouterModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
     appRoutingProvider,
-    ServiceComics
+    ServiceComics,
+    provideHttpClient()
   ],
   bootstrap: [App]
 })
