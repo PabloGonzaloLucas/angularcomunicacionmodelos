@@ -1,0 +1,19 @@
+<div class="comic-card">
+  <div class="comic-imagen-container">
+    <img [src]="comic.imagen" [alt]="comic.titulo" class="comic-imagen"/>
+    <div class="comic-overlay">
+      <div class="botones-container">
+        <button (click)="marcarFavorito()" class="btn-favorito">
+          <span class="corazon">❤️</span> Favorito
+        </button>
+        <button (click)="eliminarComic()" class="btn-borrar">
+          <span class="icono-borrar">🗑️</span> Borrar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="comic-info">
+    <h2 class="comic-titulo">{{comic.titulo}}</h2>
+    <p class="comic-descripcion">{{comic.descripcion}}</p>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div>
+  @if(comicFavorito){
+    <div style="background-color: lightcyan;">
+      <h2 style="color: fuchsia;">{{comicFavorito.titulo}}</h2>
+      <h3 style="color: brown;">{{comicFavorito.descripcion}}</h3>
+      <img src={{comicFavorito.imagen}} style="width: 200px; height: 200px;" alt="">
+    </div>
+  }
+  <h1>Crear comic</h1>
+  <form #comicForm ="ngForm">
+    <label>Titulo: </label>
+    <input type="text" name="cajatitulo" #cajaTitulo/><br>
+    <label>descripcion: </label>
+    <input type="text" name="cajadescripcion" #cajaDescripcion/><br>
+    <label>Imagen: </label>
+    <input type="text" name="cajaimagen" #cajaImagen/><br>
+    <button (click)="createComic()">Nuevo Comic</button>
+  </form>
+
+  @for(c of comics; track c; let i = $index){
+    <app-comic [comic]="c" [index]="i"
+    (seleccionarFavorito)="seleccionarFavorito($event)"
+    (deleteComic)="deleteComic($event)"
+    ></app-comic>
+
+  }
+</div>

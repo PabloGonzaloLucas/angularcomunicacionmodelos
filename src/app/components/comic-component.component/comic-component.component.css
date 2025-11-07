@@ -1,0 +1,266 @@
+/* Tarjeta del comic */
+.comic-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+  width: 280px;
+  margin: 15px;
+  display: inline-block;
+  vertical-align: top;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.comic-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Contenedor de imagen */
+.comic-imagen-container {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+/* Imagen del comic */
+.comic-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.comic-card:hover .comic-imagen {
+  transform: scale(1.15) rotate(2deg);
+}
+
+/* Overlay con el botón */
+.comic-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.comic-card:hover .comic-overlay {
+  opacity: 1;
+}
+
+/* Contenedor de botones */
+.botones-container {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Botón favorito */
+.btn-favorito {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: translateY(20px);
+}
+
+.comic-card:hover .btn-favorito {
+  transform: translateY(0);
+}
+
+.btn-favorito:hover {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+  box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
+  transform: scale(1.05) translateY(0);
+}
+
+.btn-favorito:active {
+  transform: scale(0.95) translateY(0);
+}
+
+/* Botón borrar */
+.btn-borrar {
+  background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(201, 42, 42, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: translateY(20px);
+}
+
+.comic-card:hover .btn-borrar {
+  transform: translateY(0);
+}
+
+.btn-borrar:hover {
+  background: linear-gradient(135deg, #c92a2a 0%, #8b0000 100%);
+  box-shadow: 0 6px 20px rgba(201, 42, 42, 0.6);
+  transform: scale(1.05) translateY(0);
+}
+
+.btn-borrar:active {
+  transform: scale(0.95) translateY(0);
+}
+
+/* Icono de borrar */
+.icono-borrar {
+  font-size: 1.2rem;
+  animation: shake 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  10%, 30% {
+    transform: rotate(-10deg);
+  }
+  20%, 40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Corazón emoji */
+.corazon {
+  font-size: 1.2rem;
+  animation: heartbeat 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* Información del comic */
+.comic-info {
+  padding: 20px;
+  background: white;
+}
+
+/* Título del comic */
+.comic-titulo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+  min-height: 2.6rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Descripción del comic */
+.comic-descripcion {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 3rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .comic-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 15px auto;
+    display: block;
+  }
+
+  .comic-imagen-container {
+    height: 320px;
+  }
+
+  .comic-titulo {
+    font-size: 1.2rem;
+  }
+
+  .comic-descripcion {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comic-imagen-container {
+    height: 280px;
+  }
+
+  .btn-favorito {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

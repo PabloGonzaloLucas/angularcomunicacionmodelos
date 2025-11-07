@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="titulo-principal">Catálogo de Productos</h1>
+  <div class="productos-grid">
+    @for(product of productos; track product){
+      <div class="producto-card">
+        <div class="imagen-container">
+          <img [src]="product.imagen" [alt]="product.nombre" class="producto-imagen">
+        </div>
+        <div class="producto-info">
+          <h2 class="producto-nombre">{{product.nombre}}</h2>
+          <p class="producto-precio">{{product.precio}}€</p>
+          <button class="btn-comprar">Añadir al carrito</button>
+        </div>
+      </div>
+    }
+  </div>
+</div>
